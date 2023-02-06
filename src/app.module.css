@@ -1,0 +1,13 @@
+main{
+  display:flex;
+  padding: 0 5% 0 5%;
+}
+
+
+
+.mainLeft{
+  width:60%;
+}
+.mainRight {
+  width: 40%;
+}
