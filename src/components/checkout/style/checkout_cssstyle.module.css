@@ -139,9 +139,10 @@ button:hover{cursor:pointer}
   }
 
 .ButtonShipping, .ButtonCreditCard{
-  display:flex;
+  display:none;
+  /* display:flex;
   justify-content: space-between;
-  margin: 1%;
+  margin: 1%; */
 }
 
 

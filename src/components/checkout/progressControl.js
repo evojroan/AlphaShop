@@ -1,18 +1,18 @@
 import styles from "./style/checkout_cssstyle.module.css"
 import React from 'react';
-import {ReactComponent as RightArrow} from "../../icons/right-arrow.svg"
-import {ReactComponent as LeftArrow} from "../../icons/left-arrow.svg"
+import * as rightArrowSvg from "../../icons/right-arrow.svg"
+import * as leftArrowSvg from "../../icons/left-arrow.svg"
 
 
 function NextButton(){
   return(<button className={styles.NextButton}>
-    下一步 <RightArrow/>
+    下一步 <rightArrowSvg.ReactComponent/>
        </button>)
 }
 
 function PreviousButton(){
    return(<button className={styles.PreviousButton}>
-    <LeftArrow/> 上一步
+    <leftArrowSvg.ReactComponent/> 上一步
     </button>)
 }
 
