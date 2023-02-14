@@ -1,6 +1,6 @@
 /* checkout.js*/
 .allProgress {
-  padding: 0 5% 0 5%;
+  padding: 0 5% 0 0;
 }
 
 
@@ -16,7 +16,6 @@ margin:2%;
 font-weight: 700;
   font-size: 32px;
   line-height: 38px;
-  color: var(--main-text);
 }
 
 .progressContainer{
@@ -71,6 +70,7 @@ font-weight: 700;
 
 .option1,.option2{
 border: 1px solid #c0c0c0;
+border-radius: 8px;
 position:relative;
 display:flex;
 /* justify-content: center; */
@@ -85,18 +85,19 @@ margin:2%;
  }
 
  /* registerProgress.js - <RegisterProgress3/> */
- .formBody3{
+.formBody3{
   display:grid;
   grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(3, 3fr);
     justify-content: space-between;
     grid-gap: 20px 20px;
- }
+}
 
- .line7,.line8 {
-   grid-column: 1/6;
- }
- .line9{grid-column: 1/5;
+.line7,.line8 {
+grid-column: 1/6;
+}
+
+.line9{grid-column: 1/5;
 }
 .line10 {
   grid-column: 5/9;
