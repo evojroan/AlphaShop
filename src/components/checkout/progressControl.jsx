@@ -1,11 +1,12 @@
 import styles from "./style/checkout_cssstyle.module.css"
 import React from 'react';
+import { useContext } from 'react';
+import { checkoutContext } from './checkoutContext.jsx';
 
 import * as rightArrowSvg from "../../icons/right-arrow.svg"
 import * as leftArrowSvg from "../../icons/left-arrow.svg"
 
 export default function ProgressControl({step, clickNextStep, clickPreviousStep}){
-
 
 ////////////////////// 各階段設置按鈕 //////////////////////
 function ButtonAddress({step, clickNextStep}){
