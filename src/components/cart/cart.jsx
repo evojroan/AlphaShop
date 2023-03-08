@@ -1,9 +1,8 @@
 import React from 'react';
 import styles from "./style/cart.module.css"
 import { useContext } from 'react';
-// import { cartContext } from '../../context/shopContext.jsx'; 
-// 若使用上面這行，locoalhost 畫面整片空白
-import { cartContext } from '../../hello/shopContext.jsx';
+import { cartContext } from '../../context/shopContext.jsx'; 
+import { MyShopContext } from '../../context/shopContext.jsx';
 import { useState } from 'react';
 import {ReactComponent as Plus} from "../../icons/plus.svg"
 import {ReactComponent as Minus} from "../../icons/minus.svg"
@@ -11,10 +10,11 @@ import {ReactComponent as Minus} from "../../icons/minus.svg"
 export default function Cart() {
 const cartData = useContext(cartContext);
 
-const [kittylist,setKittyList]= useState(cartData) //?
+const [kittylist,setKittyList]= useState(cartData)
 
 const totalPrice = kittylist.reduce((acc, item) => acc + item.price * item.quantity,0);
 
+////////////// 函式：購物車增加商品數量 ////////////// 
 function itemAdd(index){
   const nextKittyList = kittylist.map((c,i)=>{
     if (i===index){
@@ -26,6 +26,7 @@ function itemAdd(index){
   setKittyList(nextKittyList);
 }
 
+////////////// 函式：購物車減少商品數量 ////////////// 
 function itemSubtract(index){
     const nextKittyList = [...kittylist];
     if(nextKittyList[index].quantity >=1){
@@ -36,10 +37,14 @@ function itemSubtract(index){
     setKittyList(nextKittyList);
   }
 
+////////////// 函式：回報消費總金額 ////////////// 
+const shopContext = useContext(MyShopContext)
+function totalPriceReport (event){
+
+shopContext.handleInputChange({target:{id:"totalPrice",value:totalPrice}})}
+
   return (
         <section className={styles.cartContainer}>
-          <cartContext.Provider value={cartData}>
-          
           <h3 className={styles.cartTitle}>購物籃</h3>
           <section className={styles.productList}>
           {kittylist.map((item,index)=>(
@@ -50,9 +55,9 @@ function itemSubtract(index){
                 <h4 className={styles.productName}>{item.name}</h4>
                 <div className={styles.productControlContainer}>
                   <div className={styles.productControl}>
-                    <Minus className={styles.icon} onClick={()=>{itemSubtract(index)}} />
+                    <Minus className={styles.icon} onClick={()=>{itemSubtract(index);totalPriceReport();console.log(totalPrice)}} />
                     <span className={styles.productCount}>{item.quantity}</span>
-                    <Plus className={styles.icon} onClick={()=>{itemAdd(index)}} />
+                    <Plus className={styles.icon} onClick={()=>{itemAdd(index);totalPriceReport();console.log(totalPrice)}} />
                   </div>
                 </div>
               </div>
@@ -72,7 +77,7 @@ function itemSubtract(index){
             <div className={styles.price}>${new Intl.NumberFormat().format(totalPrice)}</div>
           </section>
           
-          </cartContext.Provider>
+          
         </section>
 
   );

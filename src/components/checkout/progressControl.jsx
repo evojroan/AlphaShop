@@ -1,7 +1,8 @@
 import styles from "./style/checkout_cssstyle.module.css"
 import React from 'react';
 import { useContext } from 'react';
-import { checkoutContext } from './checkoutContext.jsx';
+import { MyShopContext } from '../../context/shopContext.jsx';
+
 
 import * as rightArrowSvg from "../../icons/right-arrow.svg"
 import * as leftArrowSvg from "../../icons/left-arrow.svg"
@@ -39,19 +40,20 @@ function ButtonCreditCard({step, clickPreviousStep}){
       <button className={styles.PreviousButton} onClick={clickPreviousStep}>
     <leftArrowSvg.ReactComponent/> 上一步
     </button>
-      <button className={styles.OrderButton}>
+      <button className={styles.OrderButton} onClick={()=>{printAllInfo();}}>
     確認下單
     </button>
     </div>}</>
   )
 }
-
+////////////////////// 使用 Context  //////////////////////
+const {printAllInfo} = useContext(MyShopContext)
 
 ////////////////////// 本元件結構  //////////////////////
   return(
     <div className={styles.ProgressControl}>
       <div><ButtonAddress step={step} clickNextStep={clickNextStep}/></div>
       <div><ButtonShipping step={step} clickPreviousStep={clickPreviousStep} clickNextStep={clickNextStep}/></div>
-      <div><ButtonCreditCard step={step} clickPreviousStep={clickPreviousStep}/></div>
+      <div><ButtonCreditCard step={step} clickPreviousStep={clickPreviousStep} /></div>
     </div>
   )} 

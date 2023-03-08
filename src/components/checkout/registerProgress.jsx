@@ -1,14 +1,7 @@
 import styles from "./style/checkout_cssstyle.module.css"
 import { useState } from 'react';
-
-const initialPaymentInfo={
-card_holder_name:"",
-card_number:"",
-card_date:"",
-card_cvc:"",
-
-};
-
+import { useContext } from 'react';
+import { MyShopContext } from '../../context/shopContext.jsx';
 
 function Citiesmap(){
 const citieslist = [
@@ -185,39 +178,27 @@ export function RegisterProgress2({step}){
 }
 
 export function RegisterProgress3({step}){
-
-const [paymentInfo, setPaymentInfo]=useState(initialPaymentInfo)
-
-function handleInput(event) {
-  const { id, value } = event.target;
-  setPaymentInfo(prevPaymentInfo => ({
-    ...prevPaymentInfo,
-    [id]: value
-
-  }));
-  console.log(paymentInfo)
-}
+const {handleInputChange} = useContext(MyShopContext)
   return(
   <>{step===2 && <div className={styles.registerprogress3}>
       <h3 className={styles.formTitle}>付款資訊</h3>
               <section className={styles.formBody3}>
                 <div className={styles.line7}>
                 <div className={styles.inputLabel}>持卡人姓名</div>
-                <input type="text" placeholder="John Doe" id="card_holder_name" onChange={handleInput}/>
+                <input type="text" placeholder="John Doe" id="card_holder_name"onChange ={handleInputChange}/>
                 </div>
                 <div className={styles.line8}>
                   <div className={styles.inputLabel}>卡號</div>
-                  <input type="text" placeholder="1111 2222 3333 4444" id="card_number" onChange={handleInput}/>
+                  <input type="text" placeholder="1111 2222 3333 4444" id="card_number"onChange ={handleInputChange}/>
                 </div>
                 <div className={styles.line9}>
                     <div className={styles.inputLabel}>有效期限</div>
-                    <input type="text" placeholder="MM/YY" id="card_date" onChange={handleInput}/>
+                    <input type="text" placeholder="MM/YY" id="card_"onChange ={handleInputChange}/>
                   </div>
                   <div className={styles.line10}>
                     <div className={styles.inputLabel}>CVC / CCV</div>
-                    <input type="text" placeholder="123" id="card_cvc" onChange={handleInput}/>
-                
-                </div>
+                    <input type="text" placeholder="123" id="card_cvc" onChange ={handleInputChange}/>
+                  </div>
                 </section>
     </div>}</>
   )

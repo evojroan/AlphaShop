@@ -1,16 +1,15 @@
-
 import styles from './app.module.css';
 import NavbarMenu from './components/nav/navbarmenu.jsx';
 import Checkout from './components/checkout/checkout.jsx';
 import Cart from './components/cart/cart.jsx';
 import Footer from './components/footer/footer.jsx';
-import { useContext } from 'react';
-import { cartContext } from './context/shopContext.jsx';
+import ShopContextProvider from "./context/shopContext.jsx"
 
-function App({cartData}) {
+////////// Components //////////
+export default function App() {
   return (
     <div className={styles.App}>
-    <cartContext.Provider value={cartData}>
+    <ShopContextProvider>
     <NavbarMenu/>
     <main>
       <section className={styles.mainLeft}><Checkout/></section>
@@ -19,10 +18,7 @@ function App({cartData}) {
     <footer>
       <Footer/>
     </footer>
-    </cartContext.Provider>  
+    </ShopContextProvider>  
     </div>
   );
 }
-
-export default App;
-
