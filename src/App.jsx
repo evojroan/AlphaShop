@@ -3,7 +3,7 @@ import NavbarMenu from './components/nav/navbarmenu.jsx';
 import Checkout from './components/checkout/checkout.jsx';
 import Cart from './components/cart/cart.jsx';
 import Footer from './components/footer/footer.jsx';
-import ShopContextProvider from "./context/shopContext.jsx"
+import ShopContextProvider from "./context/cartContext.jsx"
 
 ////////// Components //////////
 export default function App() {

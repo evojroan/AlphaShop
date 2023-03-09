@@ -1,6 +1,6 @@
-import styles from "./style/checkout_cssstyle.module.css"
+import styles from "./checkout_cssstyle.module.css"
 import React from 'react';
-import {ReactComponent as PGComplete} from "../../icons/pg-complete.svg"
+import {ReactComponent as PGComplete} from "../../assets/pg-complete.svg"
 
 
 

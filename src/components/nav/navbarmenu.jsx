@@ -1,9 +1,9 @@
-import styles from "./style/navbar.module.css"
+import styles from "./navbar.module.css"
 import React from 'react';
-import {ReactComponent as Search} from "../../icons/search.svg"
-import {ReactComponent as Cart} from "../../icons/cart.svg"
-import {ReactComponent as Moon} from "../../icons/moon.svg"
-import {ReactComponent as Sun} from "../../icons/sun.svg"
+import {ReactComponent as Search} from "../../assets/search.svg"
+import {ReactComponent as Cart} from "../../assets/cart.svg"
+import {ReactComponent as Moon} from "../../assets/moon.svg"
+import {ReactComponent as Sun} from "../../assets/sun.svg"
 
 function NavbarMenu() {
   return (

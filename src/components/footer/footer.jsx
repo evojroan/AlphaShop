@@ -1,13 +1,8 @@
-import {ReactComponent as FaceBook} from "../../icons/facebook.svg"
-import {ReactComponent as Instagram} from "../../icons/instagram.svg"
-import {ReactComponent as Whatsapp} from "../../icons/whatsapp.svg"
-
-
+import {ReactComponent as FaceBook} from "../../assets/facebook.svg"
+import {ReactComponent as Instagram} from "../../assets/instagram.svg"
+import {ReactComponent as Whatsapp} from "../../assets/whatsapp.svg"
 import React from 'react';
-import styles from "./style/footer.module.css"
-
-
-
+import styles from "./footer.module.css"
 
 function Footer() {
   return (

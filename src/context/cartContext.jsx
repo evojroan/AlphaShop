@@ -24,15 +24,15 @@ export const cartContext = createContext(initialCartState);
 
 ////////// All Shop Information //////////
   let initialShopState={
-  card_holder_name:"",
-  card_number:"",
-  card_goodthru:"",
-  card_cvc:"",
+  cardHolderName:"",
+  cardNumber:"",
+  cardGoodThru:"",
+  cardCvc:"",
   totalPrice:""
 }
 
 ////////// Context //////////
-export const MyShopContext = createContext();
+export const myShopContext = createContext();
 export default function ShopContextProvider ({children}){
 
 const [shopState,setShopState] = useState(initialShopState) //useState
@@ -48,9 +48,9 @@ const handleInputChange = (event) => {
 const printAllInfo = ()=>{console.log(shopState)}
 
   return (
-    <MyShopContext.Provider value={{ handleInputChange, printAllInfo }}>
+    <myShopContext.Provider value={{ handleInputChange, printAllInfo }}>
       {children}
-    </MyShopContext.Provider>
+    </myShopContext.Provider>
   );
 }
 
