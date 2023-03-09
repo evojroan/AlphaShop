@@ -12,11 +12,11 @@ export default function Checkout(){
 const[step,setStep]=useState(0)
 
 function clickNextStep(){
-  setStep(step +1)
+  setStep(prev=>prev +1)
 }
 
 function clickPreviousStep(){
-  setStep(step -1)
+  setStep(prev=>prev -1)
 }
 
   return(

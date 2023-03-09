@@ -9,16 +9,16 @@ import ShopContextProvider from "./context/shopContext.jsx"
 export default function App() {
   return (
     <div className={styles.App}>
-    <ShopContextProvider>
     <NavbarMenu/>
     <main>
+      <ShopContextProvider>
       <section className={styles.mainLeft}><Checkout/></section>
       <section className={styles.mainRight}><Cart/></section>
+      </ShopContextProvider>  
     </main>
     <footer>
       <Footer/>
     </footer>
-    </ShopContextProvider>  
     </div>
   );
 }
