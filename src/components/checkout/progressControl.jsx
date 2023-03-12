@@ -1,9 +1,9 @@
 import styles from "./checkout_cssstyle.module.css";
 import React from "react";
 import { useContext } from "react";
-import { myShopContext } from "../../context/cartContext.jsx";
-import * as rightArrowSvg from "../../assets/right-arrow.svg";
-import * as leftArrowSvg from "../../assets/left-arrow.svg";
+import { myShopContext } from "context/cartContext.jsx";
+import * as rightArrowSvg from "assets/right-arrow.svg";
+import * as leftArrowSvg from "assets/left-arrow.svg";
 
 export default function ProgressControl({
   step,
@@ -14,7 +14,7 @@ export default function ProgressControl({
   function ButtonAddress({ step, clickNextStep }) {
     return (
       <>
-        {step == 0 && (
+        {step === 0 && (
           <div className={styles.ButtonAddress}>
             <button className={styles.NextButton} onClick={clickNextStep}>
               下一步 <rightArrowSvg.ReactComponent />
@@ -28,7 +28,7 @@ export default function ProgressControl({
   function ButtonShipping({ step, clickNextStep, clickPreviousStep }) {
     return (
       <>
-        {step == 1 && (
+        {step === 1 && (
           <div className={styles.ButtonShipping}>
             <button
               className={styles.PreviousButton}
@@ -48,7 +48,7 @@ export default function ProgressControl({
   function ButtonCreditCard({ step, clickPreviousStep }) {
     return (
       <>
-        {step == 2 && (
+        {step === 2 && (
           <div className={styles.ButtonCreditCard}>
             <button
               className={styles.PreviousButton}

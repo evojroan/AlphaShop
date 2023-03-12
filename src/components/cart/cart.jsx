@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./cart.module.css";
 import { useContext } from "react";
-import { cartContext, myShopContext } from "../../context/cartContext.jsx";
+import { cartContext, myShopContext } from "context/cartContext.jsx";
 import { useState } from "react";
-import { ReactComponent as Plus } from "../../assets/plus.svg";
-import { ReactComponent as Minus } from "../../assets/minus.svg";
+import { ReactComponent as Plus } from "assets/plus.svg";
+import { ReactComponent as Minus } from "assets/minus.svg";
 
 export default function Cart() {
   const cartData = useContext(cartContext);
@@ -48,7 +48,7 @@ export default function Cart() {
   }
 
   function onClickHandler(event, index) {
-    if (event.target.id === "minus") {
+    if (event.currentTarget.id === "minus") {
       removeItem(index);
     } else {
       addItem(index);
@@ -70,15 +70,21 @@ export default function Cart() {
               <h4 className={styles.productName}>{item.name}</h4>
               <div className={styles.productControlContainer}>
                 <div className={styles.productControl}>
-                  <Minus
+                  <div
                     id="minus"
                     className={styles.icon}
-                    onClick={(event)=>{onClickHandler(event,index)}}
-                  />
+                    onClick={(event) => {
+                      onClickHandler(event, index);
+                    }}
+                  >
+                    <Minus />
+                  </div>
                   <span className={styles.productCount}>{item.quantity}</span>
                   <Plus
                     className={styles.icon}
-                    onClick={(event)=>{onClickHandler(event,index)}}
+                    onClick={(event) => {
+                      onClickHandler(event, index);
+                    }}
                   />
                 </div>
               </div>

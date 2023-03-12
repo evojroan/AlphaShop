@@ -1,4 +1,4 @@
 {
   "files.associations": {"*.jsx":"javascriptreact"},
-  "[javascriptreact]":{"editor.defultformatter":"esbenp.prettier-vscode"}
+  "javascriptreact":{"editor.defultformatter":"esbenp.prettier-vscode"}
 }

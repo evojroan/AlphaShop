@@ -1,6 +1,6 @@
 import styles from "./checkout_cssstyle.module.css";
 import { useContext } from "react";
-import { myShopContext } from "../../context/cartContext.jsx";
+import { myShopContext } from "context/cartContext.jsx";
 
 function Citiesmap() {
   const citieslist = [
